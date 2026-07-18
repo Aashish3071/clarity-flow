@@ -77,14 +77,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Run your business with clarity, not complexity" },
+      { name: "description", content: "Bring customers, operations, and growth into one connected place. Book a free consultation to see what changes." },
+      { property: "og:title", content: "Run your business with clarity, not complexity" },
+      { property: "og:description", content: "Bring customers, operations, and growth into one connected place. Book a free consultation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
