@@ -196,7 +196,7 @@ function SmartCRM() {
           <ul className="mt-6 space-y-2.5 text-sm text-ink md:text-base">
             {points.map((p) => (
               <li key={p} className="flex items-start gap-3">
-                <Check className="mt-0.5 h-4.5 w-4.5 shrink-0 text-[color:var(--brand)]" strokeWidth={2.5} />
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--brand)]" strokeWidth={2.5} />
                 <span>{p}</span>
               </li>
             ))}
@@ -252,7 +252,7 @@ function Industries() {
           {list.map(({ icon: Icon, t, d }) => (
             <div key={t} className="snap-start shrink-0 basis-[85%] rounded-xl border border-border bg-card p-5 md:basis-auto">
               <span className="grid h-9 w-9 place-items-center rounded-md bg-[color:var(--brand)]/10 text-[color:var(--brand)]">
-                <Icon className="h-4.5 w-4.5" />
+                <Icon className="h-4 w-4" />
               </span>
               <h3 className="mt-3 text-base font-semibold text-ink">{t}</h3>
               <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{d}</p>

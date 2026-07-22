@@ -58,7 +58,7 @@ export function IconCard({ icon: Icon, title, text }: { icon: LucideIcon; title:
   return (
     <div className="rounded-xl border border-border bg-card p-5">
       <span className="grid h-9 w-9 place-items-center rounded-lg bg-[color:var(--brand)]/10 text-[color:var(--brand)]">
-        <Icon className="h-4.5 w-4.5" />
+        <Icon className="h-4 w-4" />
       </span>
       <h3 className="mt-4 text-base font-semibold text-ink">{title}</h3>
       <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{text}</p>
