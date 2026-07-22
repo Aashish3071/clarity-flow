@@ -9,38 +9,188 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as DemoRouteImport } from './routes/demo'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsErpRouteImport } from './routes/products.erp'
+import { Route as ProductsEcommerceRouteImport } from './routes/products.ecommerce'
+import { Route as ProductsCrmRouteImport } from './routes/products.crm'
 
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemoRoute = DemoRouteImport.update({
+  id: '/demo',
+  path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsErpRoute = ProductsErpRouteImport.update({
+  id: '/erp',
+  path: '/erp',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsEcommerceRoute = ProductsEcommerceRouteImport.update({
+  id: '/ecommerce',
+  path: '/ecommerce',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsCrmRoute = ProductsCrmRouteImport.update({
+  id: '/crm',
+  path: '/crm',
+  getParentRoute: () => ProductsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/demo': typeof DemoRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/solutions': typeof SolutionsRoute
+  '/products/crm': typeof ProductsCrmRoute
+  '/products/ecommerce': typeof ProductsEcommerceRoute
+  '/products/erp': typeof ProductsErpRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/demo': typeof DemoRoute
+  '/solutions': typeof SolutionsRoute
+  '/products/crm': typeof ProductsCrmRoute
+  '/products/ecommerce': typeof ProductsEcommerceRoute
+  '/products/erp': typeof ProductsErpRoute
+  '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/demo': typeof DemoRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/solutions': typeof SolutionsRoute
+  '/products/crm': typeof ProductsCrmRoute
+  '/products/ecommerce': typeof ProductsEcommerceRoute
+  '/products/erp': typeof ProductsErpRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/demo'
+    | '/products'
+    | '/solutions'
+    | '/products/crm'
+    | '/products/ecommerce'
+    | '/products/erp'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/demo'
+    | '/solutions'
+    | '/products/crm'
+    | '/products/ecommerce'
+    | '/products/erp'
+    | '/products'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/demo'
+    | '/products'
+    | '/solutions'
+    | '/products/crm'
+    | '/products/ecommerce'
+    | '/products/erp'
+    | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  DemoRoute: typeof DemoRoute
+  ProductsRoute: typeof ProductsRouteWithChildren
+  SolutionsRoute: typeof SolutionsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo': {
+      id: '/demo'
+      path: '/demo'
+      fullPath: '/demo'
+      preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +198,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/': {
+      id: '/products/'
+      path: '/'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/erp': {
+      id: '/products/erp'
+      path: '/erp'
+      fullPath: '/products/erp'
+      preLoaderRoute: typeof ProductsErpRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/ecommerce': {
+      id: '/products/ecommerce'
+      path: '/ecommerce'
+      fullPath: '/products/ecommerce'
+      preLoaderRoute: typeof ProductsEcommerceRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/crm': {
+      id: '/products/crm'
+      path: '/crm'
+      fullPath: '/products/crm'
+      preLoaderRoute: typeof ProductsCrmRouteImport
+      parentRoute: typeof ProductsRoute
+    }
   }
 }
 
+interface ProductsRouteChildren {
+  ProductsCrmRoute: typeof ProductsCrmRoute
+  ProductsEcommerceRoute: typeof ProductsEcommerceRoute
+  ProductsErpRoute: typeof ProductsErpRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
+}
+
+const ProductsRouteChildren: ProductsRouteChildren = {
+  ProductsCrmRoute: ProductsCrmRoute,
+  ProductsEcommerceRoute: ProductsEcommerceRoute,
+  ProductsErpRoute: ProductsErpRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
+}
+
+const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
+  ProductsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  DemoRoute: DemoRoute,
+  ProductsRoute: ProductsRouteWithChildren,
+  SolutionsRoute: SolutionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
