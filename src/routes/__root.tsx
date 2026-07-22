@@ -77,11 +77,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CRM & ERP Implementation for Growing Businesses" },
-      { name: "description", content: "We design and implement CRM and ERP systems tailored to how your business runs. Book a free 30-minute consultation." },
-      { property: "og:title", content: "CRM & ERP Implementation for Growing Businesses" },
-      { property: "og:description", content: "Custom CRM and ERP systems that simplify sales, operations, and finance. Book a free consultation." },
-      { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -95,6 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
