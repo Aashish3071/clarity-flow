@@ -12,6 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsErpRouteImport } from './routes/products.erp'
+import { Route as ProductsEcommerceRouteImport } from './routes/products.ecommerce'
+import { Route as ProductsCrmRouteImport } from './routes/products.crm'
 
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
@@ -28,28 +31,70 @@ const ProductsIndexRoute = ProductsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ProductsRoute,
 } as any)
+const ProductsErpRoute = ProductsErpRouteImport.update({
+  id: '/erp',
+  path: '/erp',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsEcommerceRoute = ProductsEcommerceRouteImport.update({
+  id: '/ecommerce',
+  path: '/ecommerce',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsCrmRoute = ProductsCrmRouteImport.update({
+  id: '/crm',
+  path: '/crm',
+  getParentRoute: () => ProductsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/products': typeof ProductsRouteWithChildren
+  '/products/crm': typeof ProductsCrmRoute
+  '/products/ecommerce': typeof ProductsEcommerceRoute
+  '/products/erp': typeof ProductsErpRoute
   '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/products/crm': typeof ProductsCrmRoute
+  '/products/ecommerce': typeof ProductsEcommerceRoute
+  '/products/erp': typeof ProductsErpRoute
   '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/products': typeof ProductsRouteWithChildren
+  '/products/crm': typeof ProductsCrmRoute
+  '/products/ecommerce': typeof ProductsEcommerceRoute
+  '/products/erp': typeof ProductsErpRoute
   '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/products' | '/products/'
+  fullPaths:
+    | '/'
+    | '/products'
+    | '/products/crm'
+    | '/products/ecommerce'
+    | '/products/erp'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/products'
-  id: '__root__' | '/' | '/products' | '/products/'
+  to:
+    | '/'
+    | '/products/crm'
+    | '/products/ecommerce'
+    | '/products/erp'
+    | '/products'
+  id:
+    | '__root__'
+    | '/'
+    | '/products'
+    | '/products/crm'
+    | '/products/ecommerce'
+    | '/products/erp'
+    | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -80,14 +125,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsIndexRouteImport
       parentRoute: typeof ProductsRoute
     }
+    '/products/erp': {
+      id: '/products/erp'
+      path: '/erp'
+      fullPath: '/products/erp'
+      preLoaderRoute: typeof ProductsErpRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/ecommerce': {
+      id: '/products/ecommerce'
+      path: '/ecommerce'
+      fullPath: '/products/ecommerce'
+      preLoaderRoute: typeof ProductsEcommerceRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/crm': {
+      id: '/products/crm'
+      path: '/crm'
+      fullPath: '/products/crm'
+      preLoaderRoute: typeof ProductsCrmRouteImport
+      parentRoute: typeof ProductsRoute
+    }
   }
 }
 
 interface ProductsRouteChildren {
+  ProductsCrmRoute: typeof ProductsCrmRoute
+  ProductsEcommerceRoute: typeof ProductsEcommerceRoute
+  ProductsErpRoute: typeof ProductsErpRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
 }
 
 const ProductsRouteChildren: ProductsRouteChildren = {
+  ProductsCrmRoute: ProductsCrmRoute,
+  ProductsEcommerceRoute: ProductsEcommerceRoute,
+  ProductsErpRoute: ProductsErpRoute,
   ProductsIndexRoute: ProductsIndexRoute,
 }
 
