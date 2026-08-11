@@ -9,9 +9,17 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Clearwork" },
-      { name: "description", content: "We help growing businesses simplify operations with CRM, ERP and E-commerce — tailored, deployed and supported." },
+      {
+        name: "description",
+        content:
+          "We help growing businesses simplify operations with CRM, ERP and E-commerce — tailored, deployed and supported.",
+      },
       { property: "og:title", content: "About Clearwork" },
-      { property: "og:description", content: "A software team that designs, implements and supports business systems for growing companies." },
+      {
+        property: "og:description",
+        content:
+          "A software team that designs, implements and supports business systems for growing companies.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -44,8 +52,14 @@ function About() {
           <div className="md:col-span-7">
             <ul className="space-y-4">
               {values.map((v) => (
-                <li key={v} className="flex items-start gap-3 rounded-xl border border-border bg-card p-5">
-                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--brand)]" strokeWidth={2.5} />
+                <li
+                  key={v}
+                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-5"
+                >
+                  <Check
+                    className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--brand)]"
+                    strokeWidth={2.5}
+                  />
                   <span className="text-sm text-ink md:text-base">{v}</span>
                 </li>
               ))}

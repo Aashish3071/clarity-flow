@@ -1,7 +1,18 @@
 import {
-  Users, Package, ShoppingCart, TrendingUp, Boxes, ClipboardList,
-  Wallet, FileText, Calendar, Workflow, CheckCircle2, Sparkles,
-  Bell, ArrowUpRight,
+  Users,
+  Package,
+  ShoppingCart,
+  TrendingUp,
+  Boxes,
+  ClipboardList,
+  Wallet,
+  FileText,
+  Calendar,
+  Workflow,
+  CheckCircle2,
+  Sparkles,
+  Bell,
+  ArrowUpRight,
 } from "lucide-react";
 
 /**
@@ -20,7 +31,9 @@ export function HeroArt() {
           <span className="h-2.5 w-2.5 rounded-full bg-destructive/40" />
           <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/60" />
           <span className="h-2.5 w-2.5 rounded-full bg-green-500/50" />
-          <span className="ml-3 truncate text-[11px] text-muted-foreground">app.clearwork.co / workspace</span>
+          <span className="ml-3 truncate text-[11px] text-muted-foreground">
+            app.clearwork.co / workspace
+          </span>
         </div>
 
         {/* Body grid */}
@@ -67,7 +80,9 @@ export function HeroArt() {
               <div className="mt-2.5 grid grid-cols-4 gap-1.5">
                 {["Lead", "Qualified", "Proposal", "Won"].map((s, i) => (
                   <div key={s} className="rounded bg-secondary p-1.5">
-                    <div className="text-[9px] font-medium uppercase tracking-wider text-ink-soft">{s}</div>
+                    <div className="text-[9px] font-medium uppercase tracking-wider text-ink-soft">
+                      {s}
+                    </div>
                     <div className="mt-1 space-y-1">
                       {Array.from({ length: 3 - (i % 3 === 2 ? 1 : 0) }).map((_, j) => (
                         <div key={j} className="rounded bg-background p-1.5">

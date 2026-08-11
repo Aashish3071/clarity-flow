@@ -22,7 +22,13 @@ export function ProductPage(p: ProductPageProps) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      <PageHero eyebrow={p.eyebrow} title={p.title} intro={p.intro} secondaryLabel="Explore other products" secondaryTo="/products" />
+      <PageHero
+        eyebrow={p.eyebrow}
+        title={p.title}
+        intro={p.intro}
+        secondaryLabel="Explore other products"
+        secondaryTo="/products"
+      />
 
       {/* Overview */}
       <section className="py-16 md:py-24">
@@ -57,12 +63,18 @@ export function ProductPage(p: ProductPageProps) {
           <SectionHeader eyebrow="Key capabilities" title="Everything you need in one place." />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {p.capabilities.map((c) => (
-              <div key={c.title} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+              <div
+                key={c.title}
+                className="rounded-2xl border border-border bg-card p-6 shadow-soft"
+              >
                 <h3 className="text-base font-semibold text-ink">{c.title}</h3>
                 <ul className="mt-4 space-y-2">
                   {c.items.map((i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-ink">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--brand)]" strokeWidth={2.5} />
+                      <Check
+                        className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--brand)]"
+                        strokeWidth={2.5}
+                      />
                       {i}
                     </li>
                   ))}
@@ -91,7 +103,10 @@ export function ProductPage(p: ProductPageProps) {
           <SectionHeader eyebrow="Suitable industries" title="Where this product fits well." />
           <div className="mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-2">
             {p.industries.map((i) => (
-              <span key={i} className="rounded-full border border-border bg-card px-4 py-2 text-sm text-ink">
+              <span
+                key={i}
+                className="rounded-full border border-border bg-card px-4 py-2 text-sm text-ink"
+              >
                 {i}
               </span>
             ))}

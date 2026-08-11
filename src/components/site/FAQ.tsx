@@ -13,7 +13,9 @@ export function FAQ({
       <div className="container-page grid gap-10 md:grid-cols-12">
         <div className="md:col-span-4">
           <p className="eyebrow">FAQ</p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-ink md:text-3xl">{title}</h2>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-ink md:text-3xl">
+            {title}
+          </h2>
         </div>
         <div className="md:col-span-8">
           <div className="divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
@@ -27,9 +29,14 @@ export function FAQ({
                 >
                   <div className="flex items-start justify-between gap-6">
                     <span className="text-sm font-semibold text-ink md:text-base">{f.q}</span>
-                    <span className="mt-0.5 text-lg text-[color:var(--brand)]">{isOpen ? "−" : "+"}</span>
+                    <span className="mt-0.5 text-lg text-[color:var(--brand)]">
+                      {isOpen ? "−" : "+"}
+                    </span>
                   </div>
-                  <div className="grid transition-all duration-300" style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}>
+                  <div
+                    className="grid transition-all duration-300"
+                    style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                  >
                     <div className="overflow-hidden">
                       <p className="pt-3 pr-6 text-sm leading-relaxed text-ink-soft">{f.a}</p>
                     </div>

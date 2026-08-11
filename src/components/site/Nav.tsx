@@ -21,21 +21,34 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur">
       <div className="container-page flex h-14 items-center justify-between md:h-16">
-        <Link to="/" className="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-ink">
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-[color:var(--brand)] text-white text-xs font-bold">C</span>
+        <Link
+          to="/"
+          className="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-ink"
+        >
+          <span className="grid h-7 w-7 place-items-center rounded-md bg-[color:var(--brand)] text-white text-xs font-bold">
+            C
+          </span>
           Clearwork
         </Link>
 
         {/* Desktop */}
         <nav className="hidden items-center gap-1 text-sm text-ink-soft md:flex">
-          <div className="relative" onMouseEnter={() => setProdOpen(true)} onMouseLeave={() => setProdOpen(false)}>
+          <div
+            className="relative"
+            onMouseEnter={() => setProdOpen(true)}
+            onMouseLeave={() => setProdOpen(false)}
+          >
             <button className="flex items-center gap-1 rounded-md px-3 py-2 hover:text-ink">
               Products <ChevronDown className="h-3.5 w-3.5" />
             </button>
             {prodOpen && (
               <div className="absolute left-0 top-full w-72 rounded-xl border border-border bg-card p-2 shadow-card">
                 {products.map((p) => (
-                  <Link key={p.to} to={p.to} className="block rounded-lg px-3 py-2.5 hover:bg-secondary">
+                  <Link
+                    key={p.to}
+                    to={p.to}
+                    className="block rounded-lg px-3 py-2.5 hover:bg-secondary"
+                  >
                     <div className="text-sm font-medium text-ink">{p.label}</div>
                     <div className="text-xs text-ink-soft">{p.desc}</div>
                   </Link>
@@ -44,7 +57,12 @@ export function Nav() {
             )}
           </div>
           {links.map((l) => (
-            <Link key={l.to} to={l.to} className="rounded-md px-3 py-2 hover:text-ink" activeProps={{ className: "text-ink" }}>
+            <Link
+              key={l.to}
+              to={l.to}
+              className="rounded-md px-3 py-2 hover:text-ink"
+              activeProps={{ className: "text-ink" }}
+            >
               {l.label}
             </Link>
           ))}
@@ -71,15 +89,27 @@ export function Nav() {
       {open && (
         <div className="border-t border-border bg-background md:hidden">
           <div className="container-page flex flex-col gap-1 py-3">
-            <div className="px-1 pb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Products</div>
+            <div className="px-1 pb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+              Products
+            </div>
             {products.map((p) => (
-              <Link key={p.to} to={p.to} onClick={() => setOpen(false)} className="rounded-md px-3 py-2.5 text-sm text-ink hover:bg-secondary">
+              <Link
+                key={p.to}
+                to={p.to}
+                onClick={() => setOpen(false)}
+                className="rounded-md px-3 py-2.5 text-sm text-ink hover:bg-secondary"
+              >
                 {p.label} <span className="text-ink-soft">— {p.desc}</span>
               </Link>
             ))}
             <div className="mt-2 border-t border-border pt-2" />
             {links.map((l) => (
-              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="rounded-md px-3 py-2.5 text-sm text-ink hover:bg-secondary">
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="rounded-md px-3 py-2.5 text-sm text-ink hover:bg-secondary"
+              >
                 {l.label}
               </Link>
             ))}
@@ -101,11 +131,18 @@ export function MinimalNav() {
   return (
     <header className="border-b border-border bg-background">
       <div className="container-page flex h-14 items-center justify-between md:h-16">
-        <Link to="/" className="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-ink">
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-[color:var(--brand)] text-white text-xs font-bold">C</span>
+        <Link
+          to="/"
+          className="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-ink"
+        >
+          <span className="grid h-7 w-7 place-items-center rounded-md bg-[color:var(--brand)] text-white text-xs font-bold">
+            C
+          </span>
           Clearwork
         </Link>
-        <Link to="/" className="text-sm text-ink-soft hover:text-ink">Back to site</Link>
+        <Link to="/" className="text-sm text-ink-soft hover:text-ink">
+          Back to site
+        </Link>
       </div>
     </header>
   );

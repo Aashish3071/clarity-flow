@@ -2,15 +2,32 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MinimalNav } from "@/components/site/Nav";
 import { DemoForm } from "@/components/site/DemoForm";
 import { FAQ } from "@/components/site/FAQ";
-import { Check, Users, Package, ShoppingCart, Calendar, Clock, MessageSquare, ClipboardCheck } from "lucide-react";
+import {
+  Check,
+  Users,
+  Package,
+  ShoppingCart,
+  Calendar,
+  Clock,
+  MessageSquare,
+  ClipboardCheck,
+} from "lucide-react";
 
 export const Route = createFileRoute("/demo")({
   head: () => ({
     meta: [
       { title: "Schedule a Demo — See CRM, ERP & E-commerce in your business context | Clearwork" },
-      { name: "description", content: "Book a 30-minute demo. Share your current setup, then pick a time that suits you. Tailored, no obligation." },
+      {
+        name: "description",
+        content:
+          "Book a 30-minute demo. Share your current setup, then pick a time that suits you. Tailored, no obligation.",
+      },
       { property: "og:title", content: "Schedule a Demo — Clearwork" },
-      { property: "og:description", content: "See how CRM, ERP or E-commerce could work in your business. 30-minute demo, no obligation." },
+      {
+        property: "og:description",
+        content:
+          "See how CRM, ERP or E-commerce could work in your business. 30-minute demo, no obligation.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -28,14 +45,16 @@ function DemoPage() {
         <div className="container-page grid gap-10 pt-10 pb-14 md:grid-cols-12 md:gap-12 md:pt-16 md:pb-20">
           <div className="md:col-span-6">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-ink-soft">
-              <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand)]" /> Personalised demo
+              <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--brand)]" /> Personalised
+              demo
             </span>
             <h1 className="mt-4 text-3xl font-semibold leading-[1.1] tracking-tight text-ink md:text-[2.75rem] md:leading-[1.05]">
               See how it could work in your business.
             </h1>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
-              Share a short summary of your current setup. In 30 minutes, we'll walk through CRM, ERP or E-commerce
-              tailored to your situation — with practical recommendations, no obligation.
+              Share a short summary of your current setup. In 30 minutes, we'll walk through CRM,
+              ERP or E-commerce tailored to your situation — with practical recommendations, no
+              obligation.
             </p>
             <ul className="mt-6 space-y-2.5 text-sm text-ink">
               {[
@@ -88,14 +107,32 @@ function DemoPage() {
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-4">
             {[
-              { icon: MessageSquare, t: "5 min", d: "A quick review of what you shared, in your words." },
-              { icon: ClipboardCheck, t: "15 min", d: "A walkthrough of CRM, ERP or E-commerce, framed for your situation." },
-              { icon: Clock, t: "5 min", d: "Questions — anything, from pricing to implementation timing." },
-              { icon: Calendar, t: "5 min", d: "A clear next step: a proposal, a scoped pilot, or nothing at all." },
+              {
+                icon: MessageSquare,
+                t: "5 min",
+                d: "A quick review of what you shared, in your words.",
+              },
+              {
+                icon: ClipboardCheck,
+                t: "15 min",
+                d: "A walkthrough of CRM, ERP or E-commerce, framed for your situation.",
+              },
+              {
+                icon: Clock,
+                t: "5 min",
+                d: "Questions — anything, from pricing to implementation timing.",
+              },
+              {
+                icon: Calendar,
+                t: "5 min",
+                d: "A clear next step: a proposal, a scoped pilot, or nothing at all.",
+              },
             ].map((s) => (
               <div key={s.t} className="rounded-xl border border-border bg-card p-5">
                 <s.icon className="h-5 w-5 text-[color:var(--brand)]" />
-                <div className="mt-3 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">{s.t}</div>
+                <div className="mt-3 text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
+                  {s.t}
+                </div>
                 <p className="mt-1 text-sm leading-relaxed text-ink">{s.d}</p>
               </div>
             ))}
@@ -114,9 +151,21 @@ function DemoPage() {
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
-              { icon: Users, t: "CRM", d: "Leads, customers, quotations and sales activity in one place, with Smart CRM assistance." },
-              { icon: Package, t: "ERP", d: "Inventory, purchasing, finance, operations and projects on one connected system." },
-              { icon: ShoppingCart, t: "E-commerce", d: "Products, online orders, customers and inventory managed from one platform." },
+              {
+                icon: Users,
+                t: "CRM",
+                d: "Leads, customers, quotations and sales activity in one place, with Smart CRM assistance.",
+              },
+              {
+                icon: Package,
+                t: "ERP",
+                d: "Inventory, purchasing, finance, operations and projects on one connected system.",
+              },
+              {
+                icon: ShoppingCart,
+                t: "E-commerce",
+                d: "Products, online orders, customers and inventory managed from one platform.",
+              },
             ].map((p) => (
               <div key={p.t} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
                 <span className="grid h-10 w-10 place-items-center rounded-xl bg-[color:var(--brand)]/10 text-[color:var(--brand)]">
@@ -133,10 +182,22 @@ function DemoPage() {
       <FAQ
         title="Before you book."
         items={[
-          { q: "Do we need to prepare anything?", a: "Just a short summary of what you're trying to improve. If you have a current tool or spreadsheet you'd like to show, bring it — but it's not required." },
-          { q: "Who should join from our side?", a: "Whoever will own the outcome. That's usually a founder, an operations lead or a department head. Extra people are welcome." },
-          { q: "Is this a sales pitch?", a: "No. The call is a working conversation. If the fit isn't right, we'll say so and suggest alternatives." },
-          { q: "What happens after the call?", a: "You'll receive a short written summary and a clear next step — a proposal, a scoped pilot, or nothing at all if it isn't the right time." },
+          {
+            q: "Do we need to prepare anything?",
+            a: "Just a short summary of what you're trying to improve. If you have a current tool or spreadsheet you'd like to show, bring it — but it's not required.",
+          },
+          {
+            q: "Who should join from our side?",
+            a: "Whoever will own the outcome. That's usually a founder, an operations lead or a department head. Extra people are welcome.",
+          },
+          {
+            q: "Is this a sales pitch?",
+            a: "No. The call is a working conversation. If the fit isn't right, we'll say so and suggest alternatives.",
+          },
+          {
+            q: "What happens after the call?",
+            a: "You'll receive a short written summary and a clear next step — a proposal, a scoped pilot, or nothing at all if it isn't the right time.",
+          },
         ]}
       />
 
@@ -149,7 +210,10 @@ function DemoPage() {
           <p className="mx-auto mt-3 max-w-xl text-sm text-white/70">
             Scroll up to pick a time — or fill in the form and we'll reach out to schedule.
           </p>
-          <a href="#schedule" className="mt-6 inline-flex items-center gap-2 rounded-md bg-white px-6 py-3.5 text-sm font-semibold text-ink transition hover:opacity-90">
+          <a
+            href="#schedule"
+            className="mt-6 inline-flex items-center gap-2 rounded-md bg-white px-6 py-3.5 text-sm font-semibold text-ink transition hover:opacity-90"
+          >
             Pick a time
           </a>
         </div>
