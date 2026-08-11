@@ -1,0 +1,10 @@
+{
+  "name": "credstacks",
+  "version": "1.0.0",
+  "description": "Credstacks Business Platform built on Frappe CRM and HRMS with AI Support Bot",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static build complete'",
+    "start": "npx -y serve . -p 3000"
+  }
+}

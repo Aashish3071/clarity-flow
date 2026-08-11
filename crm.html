@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRM Software | Lead & Sales Management | Credstacks</title>
-  <meta name="description" content="Credstacks CRM gives your sales team visual pipelines, AI lead scoring, automated follow-up scheduling, and comprehensive sales analytics.">
+  <title>CRM Software | Lead & Sales Pipeline Management | Credstacks</title>
+  <meta name="description" content="Credstacks CRM gives your sales team visual pipelines, unified email communication, automated lead routing, and an AI support bot to answer lead queries and draft emails.">
   <link rel="canonical" href="https://credstacks.com/crm">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="alternate icon" type="image/png" href="assets/logo-facebook-instagram-dark.png">
@@ -18,7 +18,10 @@
 
   <style>
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
-    @media (max-width: 768px) { .grid-3 { grid-template-columns: 1fr; } }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); }
+    @media (max-width: 768px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -57,53 +60,130 @@
   </nav>
 
   <main id="main">
+    <!-- PAGE HERO -->
     <section class="page-hero">
       <div class="container">
         <span class="section-label">Credstacks CRM</span>
-        <h1>Convert More Leads. Close Deals Faster.</h1>
-        <p class="lead">Replace disjointed messaging and spreadsheets with a structured sales pipeline, AI-powered follow-up scheduling, and live revenue forecasting.</p>
+        <h1>Simple, Powerful Sales & Pipeline Management</h1>
+        <p class="lead">Built on modern, open architecture to keep your sales team focused on closing deals without the clutter. Manage leads, track deals on visual Kanban boards, collaborate seamlessly, and get instant answers with an AI support bot.</p>
         <div class="page-hero__actions">
           <a href="book-demo.html" class="btn btn--primary btn--lg">Book CRM Demo</a>
-          <a href="demo-video.html" class="btn btn--secondary btn--lg">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            Watch Demo Video
-          </a>
           <a href="contact.html" class="btn btn--ghost-inv btn--lg">Talk to Sales</a>
         </div>
       </div>
     </section>
 
-    <!-- FEATURES -->
+    <!-- KEY CAPABILITIES -->
     <section class="section">
       <div class="container">
         <header class="section-header section-header--center">
           <span class="section-label">Capabilities</span>
-          <h2 class="section-title">Built for modern sales execution</h2>
+          <h2 class="section-title">Everything your sales team needs to close deals</h2>
+          <p class="lead">Eliminate spreadsheet chaos and rigid per-seat tools with an intuitive, extensible CRM experience.</p>
         </header>
 
         <div class="grid-3">
+          <!-- Leads and Deals -->
           <div class="feature-card">
             <div class="icon-box">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
             </div>
-            <h4>AI Lead Scoring</h4>
-            <p>Automatically evaluate incoming inquiries based on budget, authority, and engagement metrics.</p>
+            <h4>Leads & Deals Pipeline</h4>
+            <p>Track every prospect and opportunity in one place. Add rich notes, log phone calls, set tasks, and keep the complete context of every client relationship.</p>
           </div>
 
+          <!-- Views and Kanban -->
           <div class="feature-card">
-            <div class="icon-box">
+            <div class="icon-box icon-box--success">
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
             </div>
-            <h4>Visual Sales Pipeline</h4>
-            <p>Drag-and-drop deal tracking customized to your specific sales stages and approval gates.</p>
+            <h4>List & Kanban Views</h4>
+            <p>Work on a structured list or a visual drag-and-drop Kanban board. Filter, sort, save custom views, and pin your daily workspaces for instant access.</p>
           </div>
 
+          <!-- Direct Communication -->
+          <div class="feature-card">
+            <div class="icon-box icon-box--accent">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h4>Unified Communication</h4>
+            <p>Send and receive emails directly from a lead or deal record. Use pre-built templates, leave team comments, and @tag teammates to keep deals aligned.</p>
+          </div>
+
+          <!-- Automated Routing & SLAs -->
+          <div class="feature-card">
+            <div class="icon-box icon-box--warning">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h4>Assignment Rules & SLAs</h4>
+            <p>Set up automated assignment rules to route leads to the right sales reps instantly. Configure SLA policies so every inquiry receives a timely follow-up.</p>
+          </div>
+
+          <!-- Customization & Integrations -->
           <div class="feature-card">
             <div class="icon-box">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h4>Customization & Integrations</h4>
+            <p>Add custom fields, custom deal stages, and specific actions. Connect seamlessly with WhatsApp, Meta, Twilio, Exotel, and ERP accounting ledgers.</p>
+          </div>
+
+          <!-- AI Support & Productivity Bot -->
+          <div class="feature-card" style="border-color: rgba(59, 130, 246, 0.4); background: rgba(30, 41, 59, 0.5);">
+            <div class="icon-box icon-box--accent">
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
             </div>
-            <h4>Multi-Channel Communications</h4>
-            <p>Log emails, calls, and customer notes directly within the deal activity log.</p>
+            <h4>AI Support & Assistant Bot</h4>
+            <p>Ask in natural language to get instant answers on lead counts, check pending follow-ups, draft contextual outreach emails, and support users across daily sales tasks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI SUPPORT BOT SPOTLIGHT -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <span class="section-label">AI Productivity Assistant</span>
+            <h2 class="section-title">An intelligent assistant for your sales workflow</h2>
+            <p class="lead">Empower your reps with an embedded AI assistant designed to eliminate administrative friction.</p>
+            <ul style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px; color: var(--clr-gray-300); font-size: 16px;">
+              <li style="display: flex; align-items: center; gap: 10px;">
+                <span style="color: #3B82F6; font-weight: bold;">✓</span>
+                <span><strong>Instant Lead Answers:</strong> Ask "How many qualified leads do we have in healthcare?" or "Show pending tasks for today".</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: 10px;">
+                <span style="color: #3B82F6; font-weight: bold;">✓</span>
+                <span><strong>Contextual Email Drafting:</strong> Generate tailored follow-up emails using historical interaction notes in one click.</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: 10px;">
+                <span style="color: #3B82F6; font-weight: bold;">✓</span>
+                <span><strong>Follow-up & Task Tracking:</strong> Keep track of critical sales actions without manual calendar switching.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style="background: #0F172A; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 14px; margin-bottom: 18px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></div>
+                <strong style="color: #FFFFFF; font-size: 15px;">Credstacks AI Sales Assistant</strong>
+              </div>
+              <span style="font-size: 12px; color: #94A3B8; background: rgba(255, 255, 255, 0.06); padding: 3px 10px; borderRadius: 6px;">Live Assistant</span>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="background: rgba(30, 41, 59, 0.8); border-radius: 12px; padding: 14px; align-self: flex-end; max-width: 85%;">
+                <p style="margin: 0; font-size: 14px; color: #E2E8F0;">"How many active leads need follow-ups this week?"</p>
+              </div>
+
+              <div style="background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.3); border-radius: 12px; padding: 14px; align-self: flex-start; max-width: 90%;">
+                <p style="margin: 0; font-size: 14px; color: #93C5FD; line-height: 1.5;">
+                  You have <strong>14 leads</strong> with scheduled follow-ups this week. 6 are in Proposal Sent stage. Would you like me to draft follow-up templates for the top 3?
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

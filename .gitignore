@@ -1,7 +1,5 @@
 # Dependencies
 node_modules/
-demo-video/node_modules/
-demo-video/out/
 .pnpm-store/
 
 # OS and IDE files
@@ -15,3 +13,4 @@ Thumbs.db
 dist/
 build/
 .cache/
+.vercel/
