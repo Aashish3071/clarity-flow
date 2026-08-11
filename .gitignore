@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+demo-video/node_modules/
+demo-video/out/
+.pnpm-store/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Build artifacts
+dist/
+build/
+.cache/

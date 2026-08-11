@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Credstacks logo">
+  <title>Credstacks</title>
+  <defs>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <filter id="logoShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(79,70,229,0.3)"/>
+    </filter>
+  </defs>
+  <!-- Top stack: lightest -->
+  <rect x="12" y="1" width="27" height="11" rx="3.5" fill="url(#logoGrad)" fill-opacity="0.35"/>
+  <!-- Middle stack -->
+  <rect x="6"  y="15" width="27" height="11" rx="3.5" fill="url(#logoGrad)" fill-opacity="0.65"/>
+  <!-- Bottom stack: full opacity -->
+  <rect x="0"  y="29" width="27" height="11" rx="3.5" fill="url(#logoGrad)" filter="url(#logoShadow)"/>
+</svg>
