@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start Your 14-Day Free Trial | Credstacks</title>
-  <meta name="description" content="Start your free 14-day trial of Credstacks. Full access to CRM, ERP, HRMS, and E-commerce. No credit card required.">
+  <title>Start Your 14-Day Free Access | Credstacks</title>
+  <meta name="description" content="Get 14 days of full access to Credstacks CRM, ERP, HRMS, and E-commerce. No credit card required. Setup in under 24 hours.">
   <link rel="canonical" href="https://credstacks.com/book-demo">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="alternate icon" type="image/png" href="assets/logo-facebook-instagram-dark.png">
   <link rel="apple-touch-icon" href="assets/logo-facebook-instagram-dark.png">
 
   <!-- Open Graph for Ads -->
-  <meta property="og:title" content="Credstacks: 14-Day Free Trial">
-  <meta property="og:description" content="All-in-one AI-powered CRM, ERP, HRMS & E-commerce. Start free, no credit card needed.">
+  <meta property="og:title" content="Credstacks: 14-Day Full Platform Access">
+  <meta property="og:description" content="Unified CRM, ERP, HRMS & E-commerce software suite. Start your 14-day trial with no credit card required.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://credstacks.com/book-demo">
 
@@ -32,84 +32,41 @@
 
   <style>
     /* ============================================
-       LANDING PAGE STYLES
+       ENTERPRISE LANDING PAGE STYLES
        ============================================ */
 
-    /* HERO */
+    /* HERO SECTION */
     .lp-hero {
       padding-top: calc(var(--nav-height) + var(--sp-12));
       padding-bottom: var(--sp-16);
-      background: linear-gradient(170deg, #0B132B 0%, #1C2541 50%, #0F172A 100%);
+      background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+      color: var(--clr-white);
       position: relative;
-      overflow: hidden;
-    }
-
-    .lp-hero::before {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -20%;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .lp-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      left: -10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
     }
 
     .lp-hero-grid {
       display: grid;
-      grid-template-columns: 1fr 440px;
+      grid-template-columns: 1fr 460px;
       gap: var(--sp-12);
       align-items: center;
-      position: relative;
-      z-index: 2;
     }
 
     .lp-hero-content {
-      color: var(--clr-white);
+      max-width: 600px;
     }
 
-    .lp-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(37, 99, 235, 0.15);
-      border: 1px solid rgba(37, 99, 235, 0.3);
-      padding: 6px 14px;
-      border-radius: var(--r-full);
+    .lp-eyebrow {
+      display: inline-block;
       font-size: 13px;
-      font-weight: 600;
-      color: #93C5FD;
-      margin-bottom: var(--sp-5);
-    }
-
-    .lp-badge-dot {
-      width: 8px;
-      height: 8px;
-      background: #10B981;
-      border-radius: 50%;
-      animation: pulse-dot 2s infinite;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #38BDF8;
+      margin-bottom: var(--sp-4);
     }
 
     .lp-hero-title {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2.25rem, 4vw, 3.25rem);
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -0.03em;
@@ -117,333 +74,262 @@
       margin-bottom: var(--sp-5);
     }
 
-    .lp-hero-title .text-gradient {
-      background: linear-gradient(135deg, #60A5FA 0%, #38BDF8 50%, #34D399 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .lp-hero-title span.highlight {
+      color: #60A5FA;
     }
 
-    .lp-no-cc {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      color: #6EE7B7;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: var(--r-full);
+    .lp-hero-lead {
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 1.6;
+      color: #94A3B8;
       margin-bottom: var(--sp-8);
     }
 
-    .lp-no-cc svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-
-    .lp-hero-stats {
+    .lp-benefits-list {
       display: flex;
-      gap: var(--sp-8);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: var(--sp-6);
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: var(--sp-8);
     }
 
-    .lp-hero-stat {
-      text-align: left;
+    .lp-benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: #E2E8F0;
+      line-height: 1.5;
     }
 
-    .lp-hero-stat-value {
-      display: block;
-      font-size: 1.75rem;
+    .lp-benefit-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38BDF8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
       font-weight: 800;
-      color: var(--clr-white);
-      letter-spacing: -0.02em;
-    }
-
-    .lp-hero-stat-label {
-      font-size: 13px;
-      color: var(--clr-gray-400);
-      font-weight: 500;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     /* FORM CARD */
     .lp-form-card {
       background: var(--clr-white);
-      border-radius: var(--r-2xl);
+      border-radius: var(--r-xl);
       padding: var(--sp-8);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-      position: relative;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.25);
+      border: 1px solid var(--clr-border);
     }
 
-    .lp-form-badge {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, #2563EB, #0EA5E9);
-      color: white;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 6px 20px;
-      border-radius: var(--r-full);
-      white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    .lp-form-header {
+      margin-bottom: var(--sp-6);
+      text-align: left;
+      border-bottom: 1px solid var(--clr-border);
+      padding-bottom: var(--sp-4);
     }
 
     .lp-form-title {
-      font-size: var(--fs-xl);
-      font-weight: 700;
+      font-size: 1.35rem;
+      font-weight: 800;
       color: var(--clr-gray-900);
-      text-align: center;
-      margin-top: var(--sp-2);
-      margin-bottom: var(--sp-1);
+      margin-bottom: 4px;
     }
 
     .lp-form-sub {
-      font-size: var(--fs-xs);
+      font-size: 13px;
       color: var(--clr-text-muted);
-      text-align: center;
-      margin-bottom: var(--sp-5);
+      margin: 0;
     }
 
-    .lp-form-footer {
-      text-align: center;
-      margin-top: var(--sp-3);
+    .lp-form-guarantee {
+      margin-top: var(--sp-4);
+      padding: 10px 14px;
+      background: var(--clr-surface-alt);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 12px;
-      color: var(--clr-text-faint);
+      color: var(--clr-gray-700);
+      font-weight: 500;
     }
 
-    .lp-form-footer svg {
-      display: inline-block;
-      vertical-align: -2px;
-      margin-right: 4px;
+    .lp-form-guarantee svg {
+      color: var(--clr-primary);
+      flex-shrink: 0;
     }
 
     /* TRUST BAR */
     .lp-trust {
-      padding: var(--sp-10) 0;
+      padding: var(--sp-8) 0;
       background: var(--clr-white);
       border-bottom: 1px solid var(--clr-border);
     }
 
-    .lp-trust-inner {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: var(--sp-10);
-      flex-wrap: wrap;
+    .lp-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-6);
     }
 
-    .lp-trust-item {
+    .lp-trust-card {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--clr-gray-700);
+      gap: 14px;
+      padding: 12px 16px;
+      background: var(--clr-surface-alt);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-lg);
     }
 
     .lp-trust-icon {
       width: 36px;
       height: 36px;
-      border-radius: var(--r-lg);
+      border-radius: var(--r-md);
+      background: var(--clr-primary-light);
+      color: var(--clr-primary);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
 
-    .lp-trust-icon--blue { background: var(--clr-primary-light); color: var(--clr-primary); }
-    .lp-trust-icon--green { background: var(--clr-success-light); color: var(--clr-success); }
-    .lp-trust-icon--amber { background: var(--clr-warning-light); color: var(--clr-warning); }
-
-    .lp-trust-icon svg {
-      width: 20px;
-      height: 20px;
+    .lp-trust-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--clr-gray-900);
+      margin-bottom: 2px;
     }
 
-    /* VALUE PROPS */
-    .lp-value {
+    .lp-trust-desc {
+      font-size: 12px;
+      color: var(--clr-text-muted);
+      margin: 0;
+    }
+
+    /* MODULES GRID */
+    .lp-modules {
       padding: var(--sp-16) 0;
       background: var(--clr-surface-alt);
     }
 
-    .lp-value-header {
-      text-align: center;
-      margin-bottom: var(--sp-12);
-    }
-
-    .lp-value-header h2 {
-      font-size: var(--fs-h2);
-      margin-bottom: var(--sp-3);
-    }
-
-    .lp-value-header p {
-      max-width: 56ch;
-      margin-inline: auto;
-    }
-
-    .lp-value-grid {
+    .lp-modules-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: var(--sp-6);
     }
 
-    .lp-value-card {
+    .lp-module-card {
       background: var(--clr-white);
       border: 1px solid var(--clr-border);
       border-radius: var(--r-xl);
-      padding: var(--sp-6) var(--sp-5);
+      padding: var(--sp-6);
       transition: transform var(--t-base), box-shadow var(--t-base);
     }
 
-    .lp-value-card:hover {
+    .lp-module-card:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-md);
     }
 
-    .lp-value-card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--r-lg);
+    .lp-module-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--r-md);
+      background: var(--clr-primary-light);
+      color: var(--clr-primary);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: var(--sp-4);
     }
 
-    .lp-value-card-icon svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .lp-value-card h3 {
-      font-size: var(--fs-md);
+    .lp-module-card h3 {
+      font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: var(--sp-2);
     }
 
-    .lp-value-card p {
+    .lp-module-card p {
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
-    /* HOW IT WORKS */
+    /* STEPS SECTION */
     .lp-steps {
       padding: var(--sp-16) 0;
       background: var(--clr-white);
-    }
-
-    .lp-steps-header {
-      text-align: center;
-      margin-bottom: var(--sp-12);
-    }
-
-    .lp-steps-header h2 {
-      font-size: var(--fs-h2);
-      margin-bottom: var(--sp-3);
     }
 
     .lp-steps-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: var(--sp-8);
+    }
+
+    .lp-step-card {
+      background: var(--clr-surface-alt);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-xl);
+      padding: var(--sp-8);
       position: relative;
     }
 
-    .lp-steps-grid::before {
-      content: '';
-      position: absolute;
-      top: 36px;
-      left: calc(16.66% + 24px);
-      right: calc(16.66% + 24px);
-      height: 2px;
-      background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
-      opacity: 0.3;
-    }
-
-    .lp-step {
-      text-align: center;
-      position: relative;
-    }
-
-    .lp-step-num {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto var(--sp-4);
-      font-size: 1.5rem;
+    .lp-step-number {
+      font-size: 12px;
       font-weight: 800;
-      background: var(--clr-primary-light);
       color: var(--clr-primary);
-      border: 3px solid var(--clr-primary-border);
-      position: relative;
-      z-index: 2;
-    }
-
-    .lp-step h3 {
-      font-size: var(--fs-md);
-      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       margin-bottom: var(--sp-2);
     }
 
-    .lp-step p {
-      font-size: 14px;
-      max-width: 28ch;
-      margin-inline: auto;
+    .lp-step-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: var(--sp-3);
     }
 
-    /* FAQ */
+    .lp-step-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* FAQ SECTION */
     .lp-faq {
       padding: var(--sp-16) 0;
       background: var(--clr-surface-alt);
       border-top: 1px solid var(--clr-border);
     }
 
-    .lp-faq-header {
-      text-align: center;
-      margin-bottom: var(--sp-10);
-    }
-
-    .lp-faq-header h2 {
-      font-size: var(--fs-h2);
-      margin-bottom: var(--sp-3);
-    }
-
-    .lp-faq-list {
-      max-width: 720px;
+    .lp-faq-container {
+      max-width: 760px;
       margin-inline: auto;
-      display: flex;
-      flex-direction: column;
-      gap: var(--sp-3);
     }
 
     .lp-faq-item {
       background: var(--clr-white);
       border: 1px solid var(--clr-border);
       border-radius: var(--r-lg);
+      margin-bottom: var(--sp-3);
       overflow: hidden;
-      transition: box-shadow var(--t-base);
-    }
-
-    .lp-faq-item:hover {
-      box-shadow: var(--shadow-sm);
     }
 
     .lp-faq-btn {
       width: 100%;
+      padding: 18px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 20px;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--clr-gray-900);
       text-align: left;
       cursor: pointer;
@@ -452,11 +338,10 @@
     }
 
     .lp-faq-btn svg {
-      width: 20px;
-      height: 20px;
-      color: var(--clr-gray-400);
+      width: 18px;
+      height: 18px;
+      color: var(--clr-gray-500);
       transition: transform var(--t-base);
-      flex-shrink: 0;
     }
 
     .lp-faq-item.open .lp-faq-btn svg {
@@ -470,39 +355,14 @@
     }
 
     .lp-faq-answer-inner {
-      padding: 0 20px 16px;
+      padding: 0 20px 18px;
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.65;
       color: var(--clr-text-muted);
     }
 
     .lp-faq-item.open .lp-faq-answer {
-      max-height: 300px;
-    }
-
-    /* FINAL CTA */
-    .lp-final-cta {
-      padding: var(--sp-16) 0;
-      background: linear-gradient(170deg, #0B132B 0%, #1C2541 100%);
-      text-align: center;
-    }
-
-    .lp-final-cta h2 {
-      color: var(--clr-white);
-      font-size: var(--fs-h2);
-      margin-bottom: var(--sp-3);
-    }
-
-    .lp-final-cta p {
-      color: var(--clr-gray-300);
-      margin-bottom: var(--sp-6);
-      max-width: 50ch;
-      margin-inline: auto;
-    }
-
-    .lp-final-cta .btn {
-      font-size: 16px;
-      padding: 14px 32px;
+      max-height: 250px;
     }
 
     /* RESPONSIVE */
@@ -511,47 +371,17 @@
         grid-template-columns: 1fr;
         gap: var(--sp-8);
       }
-      .lp-hero-content {
-        text-align: center;
-      }
-      .lp-hero-stats {
-        justify-content: center;
-      }
-      .lp-hero-stat {
-        text-align: center;
-      }
-      .lp-no-cc {
-        margin-inline: auto;
-      }
-      .lp-form-card {
-        max-width: 480px;
-        margin-inline: auto;
-      }
-      .lp-value-grid {
-        grid-template-columns: 1fr;
-        gap: var(--sp-4);
+      .lp-trust-grid, .lp-modules-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
       .lp-steps-grid {
         grid-template-columns: 1fr;
-        gap: var(--sp-6);
-      }
-      .lp-steps-grid::before {
-        display: none;
       }
     }
 
     @media (max-width: 640px) {
-      .lp-hero {
-        padding-bottom: var(--sp-10);
-      }
-      .lp-hero-stats {
-        flex-direction: column;
-        gap: var(--sp-3);
-        align-items: center;
-      }
-      .lp-trust-inner {
-        flex-direction: column;
-        gap: var(--sp-4);
+      .lp-trust-grid, .lp-modules-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -593,48 +423,45 @@
 
   <main id="main">
 
-    <!-- ========== HERO + FORM (ABOVE THE FOLD) ========== -->
+    <!-- ========== HERO SECTION ========== -->
     <section class="lp-hero">
       <div class="container">
         <div class="lp-hero-grid">
 
-          <!-- LEFT: Headline & Trust -->
+          <!-- LEFT: Headline & Value Statement -->
           <div class="lp-hero-content">
-            <div class="lp-badge">
-              <span class="lp-badge-dot"></span>
-              14-Day Free Trial
-            </div>
+            <span class="lp-eyebrow">All-In-One Business Platform</span>
 
             <h1 class="lp-hero-title">
-              Credstacks Free for <span class="text-gradient">14 Days</span>
+              Unified CRM, ERP & HRMS for <span class="highlight">Growing Enterprise Teams</span>
             </h1>
 
-            <div class="lp-no-cc">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              No credit card required. Cancel anytime.
-            </div>
+            <p class="lp-hero-lead">
+              Eliminate software silos, track leads on visual Kanban pipelines, automate routine operational workflows, and empower your staff with an intelligent AI support bot.
+            </p>
 
-            <div class="lp-hero-stats">
-              <div class="lp-hero-stat">
-                <span class="lp-hero-stat-value">500+</span>
-                <span class="lp-hero-stat-label">Businesses Powered</span>
+            <div class="lp-benefits-list">
+              <div class="lp-benefit-item">
+                <div class="lp-benefit-check">✓</div>
+                <div><strong>Full 14-Day Unrestricted Access:</strong> Test all CRM, ERP, HRMS, and E-commerce capabilities with your team.</div>
               </div>
-              <div class="lp-hero-stat">
-                <span class="lp-hero-stat-value">4</span>
-                <span class="lp-hero-stat-label">Core Modules</span>
+              <div class="lp-benefit-item">
+                <div class="lp-benefit-check">✓</div>
+                <div><strong>No Credit Card Required:</strong> Zero payment commitments or automatic recurring charges during trial.</div>
               </div>
-              <div class="lp-hero-stat">
-                <span class="lp-hero-stat-value">24h</span>
-                <span class="lp-hero-stat-label">Setup Time</span>
+              <div class="lp-benefit-item">
+                <div class="lp-benefit-check">✓</div>
+                <div><strong>Dedicated Onboarding Support:</strong> Our team assists with workspace configuration and data import.</div>
               </div>
             </div>
           </div>
 
-          <!-- RIGHT: Form Card -->
+          <!-- RIGHT: Professional Access Request Form -->
           <div class="lp-form-card">
-            <div class="lp-form-badge">14-Day Free Trial</div>
-            <h2 class="lp-form-title">Start Your Free Trial</h2>
-            <p class="lp-form-sub">Get full access in under 24 hours.</p>
+            <div class="lp-form-header">
+              <h2 class="lp-form-title">Start Your 14-Day Free Access</h2>
+              <p class="lp-form-sub">Get your dedicated workspace provisioned in under 24 hours.</p>
+            </div>
 
             <form class="form" id="demoForm" novalidate>
               <div class="form-row">
@@ -667,14 +494,14 @@
                 <div class="form-group">
                   <label class="form-label" for="dProduct">Primary Interest <span class="form-required">*</span></label>
                   <select class="form-select" id="dProduct" name="product" required>
-                    <option value="">Select product</option>
-                    <option value="CRM">CRM</option>
-                    <option value="ERP">ERP</option>
-                    <option value="HRMS">HRMS</option>
+                    <option value="">Select product module</option>
+                    <option value="CRM">Sales & CRM</option>
+                    <option value="ERP">Operations & ERP</option>
+                    <option value="HRMS">HRMS & Payroll</option>
                     <option value="Ecommerce">E-commerce</option>
-                    <option value="Suite">Full Suite</option>
+                    <option value="Suite">Full Business Suite</option>
                   </select>
-                  <span class="form-error">Please select a product</span>
+                  <span class="form-error">Please select a module</span>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="dSize">Company Size</label>
@@ -689,15 +516,14 @@
               </div>
 
               <button type="submit" class="btn btn--primary btn--lg" style="width: 100%; margin-top: var(--sp-2);">
-                Start My Free Trial
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-left: 6px;"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Request 14-Day Free Access
               </button>
             </form>
 
-            <p class="lp-form-footer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-              Your data is encrypted and secure. We never share your information.
-            </p>
+            <div class="lp-form-guarantee">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              <span>Instant provisioning • No credit card required • Strict data privacy</span>
+            </div>
           </div>
 
         </div>
@@ -707,175 +533,173 @@
     <!-- ========== TRUST BAR ========== -->
     <section class="lp-trust">
       <div class="container">
-        <div class="lp-trust-inner">
-          <div class="lp-trust-item">
-            <div class="lp-trust-icon lp-trust-icon--blue">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <div class="lp-trust-grid">
+          <div class="lp-trust-card">
+            <div class="lp-trust-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             </div>
-            AES-256 Encryption
+            <div>
+              <div class="lp-trust-title">AES-256 Encryption</div>
+              <p class="lp-trust-desc">Data encrypted in transit & at rest</p>
+            </div>
           </div>
-          <div class="lp-trust-item">
-            <div class="lp-trust-icon lp-trust-icon--green">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+
+          <div class="lp-trust-card">
+            <div class="lp-trust-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
-            Setup in Under 24 Hours
+            <div>
+              <div class="lp-trust-title">Fast Provisioning</div>
+              <p class="lp-trust-desc">Instance setup in under 24 hours</p>
+            </div>
           </div>
-          <div class="lp-trust-item">
-            <div class="lp-trust-icon lp-trust-icon--amber">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+
+          <div class="lp-trust-card">
+            <div class="lp-trust-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
             </div>
-            No Credit Card Needed
+            <div>
+              <div class="lp-trust-title">Full Portability</div>
+              <p class="lp-trust-desc">Complete ownership of your business data</p>
+            </div>
           </div>
-          <div class="lp-trust-item">
-            <div class="lp-trust-icon lp-trust-icon--blue">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+
+          <div class="lp-trust-card">
+            <div class="lp-trust-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
             </div>
-            500+ Businesses Trust Us
+            <div>
+              <div class="lp-trust-title">Onboarding Support</div>
+              <p class="lp-trust-desc">Guided assistance during your trial</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== WHAT YOU GET IN 14 DAYS ========== -->
-    <section class="lp-value">
+    <!-- ========== MODULES OVERVIEW ========== -->
+    <section class="lp-modules">
       <div class="container">
-        <div class="lp-value-header">
-          <span class="section-label">What You Get</span>
-          <h2>Everything included in your 14-day trial</h2>
-          <p class="lead">Full, unrestricted access to the entire platform. No feature limits, no surprises.</p>
-        </div>
+        <header class="section-header section-header--center">
+          <span class="section-label">Included Modules</span>
+          <h2 class="section-title">Explore the Complete Credstacks Suite</h2>
+          <p class="lead">Test every module during your 14-day free access window.</p>
+        </header>
 
-        <div class="lp-value-grid">
-          <div class="lp-value-card">
-            <div class="lp-value-card-icon" style="background: var(--clr-primary-light); color: var(--clr-primary);">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        <div class="lp-modules-grid">
+          <div class="lp-module-card">
+            <div class="lp-module-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
-            <h3>Full Platform Access</h3>
-            <p>All four modules unlocked: CRM for sales pipelines, ERP for operations, HRMS for people management, and E-commerce for your online store.</p>
+            <h3>Smart CRM</h3>
+            <p>Visual drag-and-drop Kanban pipelines, lead assignment rules, in-app email sync, and AI support bot assistance.</p>
           </div>
 
-          <div class="lp-value-card">
-            <div class="lp-value-card-icon" style="background: var(--clr-accent-light); color: var(--clr-accent);">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+          <div class="lp-module-card">
+            <div class="lp-module-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             </div>
-            <h3>AI Support Bot Included</h3>
-            <p>Get instant answers on lead counts, pending follow-ups, draft outreach emails, and answer HR policy questions using natural language.</p>
+            <h3>Enterprise ERP</h3>
+            <p>Inventory tracking, double-entry accounting, multi-currency invoicing, purchase orders, and live financial reporting.</p>
           </div>
 
-          <div class="lp-value-card">
-            <div class="lp-value-card-icon" style="background: var(--clr-success-light); color: var(--clr-success);">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+          <div class="lp-module-card">
+            <div class="lp-module-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
             </div>
-            <h3>Dedicated Setup Support</h3>
-            <p>Our onboarding team helps configure your workspace, import existing data, and tailor workflows to match your business during the trial.</p>
+            <h3>HRMS & Payroll</h3>
+            <p>Employee records, automated attendance tracking, leave request approvals, tax computations, and automated payslips.</p>
+          </div>
+
+          <div class="lp-module-card">
+            <div class="lp-module-icon">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            </div>
+            <h3>E-commerce</h3>
+            <p>Custom store builder, product catalogs, shopping cart checkout, and real-time inventory synchronization with your ERP.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== HOW IT WORKS ========== -->
+    <!-- ========== SIMPLE ONBOARDING STEPS ========== -->
     <section class="lp-steps">
       <div class="container">
-        <div class="lp-steps-header">
-          <span class="section-label">How It Works</span>
-          <h2>Get started in three simple steps</h2>
-          <p class="lead">From signup to exploring your workspace, the entire process takes less than a day.</p>
-        </div>
+        <header class="section-header section-header--center">
+          <span class="section-label">Onboarding Process</span>
+          <h2 class="section-title">How Your 14-Day Trial Works</h2>
+          <p class="lead">From request to operational testing in three straightforward steps.</p>
+        </header>
 
         <div class="lp-steps-grid">
-          <div class="lp-step">
-            <div class="lp-step-num">1</div>
-            <h3>Fill the form above</h3>
-            <p>Takes less than 30 seconds. Tell us your name, email, and which product interests you.</p>
+          <div class="lp-step-card">
+            <div class="lp-step-number">Step 01</div>
+            <h3>Request Access</h3>
+            <p>Fill in your business details above. Takes less than a minute with no credit card required.</p>
           </div>
 
-          <div class="lp-step">
-            <div class="lp-step-num">2</div>
-            <h3>We set up your workspace</h3>
-            <p>Our team provisions a dedicated instance configured for your business within 24 hours.</p>
+          <div class="lp-step-card">
+            <div class="lp-step-number">Step 02</div>
+            <h3>Workspace Setup</h3>
+            <p>Our team provisions a dedicated, secure environment tailored to your industry and requirements within 24 hours.</p>
           </div>
 
-          <div class="lp-step">
-            <div class="lp-step-num">3</div>
-            <h3>Explore freely for 14 days</h3>
-            <p>Full access to every feature. Use real data, real workflows, and real team collaboration.</p>
+          <div class="lp-step-card">
+            <div class="lp-step-number">Step 03</div>
+            <h3>14 Days Full Access</h3>
+            <p>Collaborate with your team, import sample data, test AI assistant queries, and evaluate platform ROI risk-free.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== FAQ ========== -->
+    <!-- ========== FAQ ACCORDION ========== -->
     <section class="lp-faq">
-      <div class="container">
-        <div class="lp-faq-header">
-          <span class="section-label">Common Questions</span>
-          <h2>Frequently asked questions</h2>
-          <p class="lead">Quick answers to help you decide.</p>
-        </div>
+      <div class="container lp-faq-container">
+        <header class="section-header section-header--center">
+          <span class="section-label">Questions & Answers</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </header>
 
-        <div class="lp-faq-list">
-          <div class="lp-faq-item">
-            <button class="lp-faq-btn" type="button" aria-expanded="false">
-              Is the 14-day trial really free?
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="lp-faq-answer">
-              <div class="lp-faq-answer-inner">Yes, completely free. You get full access to all platform features for 14 days with no credit card required and no hidden charges. If you choose not to continue, your trial simply expires with no obligation.</div>
-            </div>
-          </div>
-
-          <div class="lp-faq-item">
-            <button class="lp-faq-btn" type="button" aria-expanded="false">
-              Do I need a credit card to start?
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="lp-faq-answer">
-              <div class="lp-faq-answer-inner">No. We do not collect any payment information during the trial signup. You only provide billing details if you decide to subscribe after the trial period ends.</div>
-            </div>
-          </div>
-
-          <div class="lp-faq-item">
-            <button class="lp-faq-btn" type="button" aria-expanded="false">
-              What happens after the trial ends?
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="lp-faq-answer">
-              <div class="lp-faq-answer-inner">After 14 days, your workspace is paused (not deleted). You can choose a subscription plan to continue with all your data intact, or export your data if you decide not to proceed. There is no automatic billing.</div>
-            </div>
-          </div>
-
-          <div class="lp-faq-item">
-            <button class="lp-faq-btn" type="button" aria-expanded="false">
-              Can I get help during the trial?
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="lp-faq-answer">
-              <div class="lp-faq-answer-inner">Absolutely. Every trial includes access to our onboarding support team who can help with initial configuration, data import, and workflow setup. Reach us at <a href="mailto:info@credstacks.com" style="color: var(--clr-primary);">info@credstacks.com</a>.</div>
-            </div>
-          </div>
-
-          <div class="lp-faq-item">
-            <button class="lp-faq-btn" type="button" aria-expanded="false">
-              Can I import my existing data?
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="lp-faq-answer">
-              <div class="lp-faq-answer-inner">Yes. Credstacks supports data imports from CSV, Excel, and common business software formats. Our team will guide you through the migration process during your trial setup.</div>
-            </div>
+        <div class="lp-faq-item">
+          <button class="lp-faq-btn" type="button" aria-expanded="false">
+            Is the 14-day access period completely free?
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="lp-faq-answer">
+            <div class="lp-faq-answer-inner">Yes. You receive 14 days of full, unrestricted platform access with zero financial commitment. We do not collect credit card details for trial access.</div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ========== FINAL CTA ========== -->
-    <section class="lp-final-cta">
-      <div class="container">
-        <h2>Ready to see the difference?</h2>
-        <p>Start your free 14-day trial today. Full access, no credit card, no commitment.</p>
-        <a href="#main" class="btn btn--primary btn--lg" onclick="document.getElementById('dName').focus(); return false;">
-          Get Started Free
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-left: 6px;"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <div class="lp-faq-item">
+          <button class="lp-faq-btn" type="button" aria-expanded="false">
+            What happens when the 14-day trial period ends?
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="lp-faq-answer">
+            <div class="lp-faq-answer-inner">At the conclusion of your trial, your workspace remains saved for 30 days. You can choose to upgrade to a paid subscription or export your business data. No unexpected charges will occur.</div>
+          </div>
+        </div>
+
+        <div class="lp-faq-item">
+          <button class="lp-faq-btn" type="button" aria-expanded="false">
+            Can our team import existing business data during trial?
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="lp-faq-answer">
+            <div class="lp-faq-answer-inner">Yes. You can import contacts, leads, inventory items, and financial records via CSV or Excel files. Our onboarding team is available to assist with data formatting.</div>
+          </div>
+        </div>
+
+        <div class="lp-faq-item">
+          <button class="lp-faq-btn" type="button" aria-expanded="false">
+            How can we contact technical support during trial evaluation?
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="lp-faq-answer">
+            <div class="lp-faq-answer-inner">Every trial account includes support via email (<a href="mailto:info@credstacks.com" style="color: var(--clr-primary);">info@credstacks.com</a>) and direct consultation with our solutions team.</div>
+          </div>
+        </div>
       </div>
     </section>
 
