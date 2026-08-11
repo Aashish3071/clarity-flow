@@ -1,0 +1,25 @@
+{
+  "name": "demo-video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts CredstacksCRMDemo out/credstacks-crm-demo.mp4",
+    "preview": "remotion preview src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@remotion/cli": "4.0.268",
+    "@remotion/player": "4.0.268",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "remotion": "4.0.268",
+    "typescript": "5.7.3"
+  }
+}
