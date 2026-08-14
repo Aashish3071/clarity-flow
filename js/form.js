@@ -19,7 +19,6 @@
     const form = document.getElementById(formId);
     if (!form) return;
 
-    // Prevent double listener attachments
     if (form.dataset.initialized === 'true') return;
     form.dataset.initialized = 'true';
 
@@ -77,17 +76,24 @@
       });
 
       try {
-        // Send to Google Sheets Web App endpoint
+        // Send payload using standard URL-encoded form data (robust for all Google Apps Script parsers)
+        const urlParams = new URLSearchParams();
+        Object.keys(payload).forEach(key => {
+          urlParams.append(key, payload[key]);
+        });
+        // Also attach raw JSON string in payload parameter
+        urlParams.append('payload_json', JSON.stringify(payload));
+
         await fetch(GOOGLE_SHEETS_ENDPOINT, {
           method: 'POST',
-          mode: 'no-cors', // standard for Google Apps Script Web Apps to bypass CORS restrictions
+          mode: 'no-cors',
           headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
           },
-          body: JSON.stringify(payload)
+          body: urlParams.toString()
         });
 
-        // Trigger Google Tag Manager Data Layer Event if present
+        // Trigger Google Tag Manager Data Layer Event
         if (window.dataLayer) {
           window.dataLayer.push({
             event: formId === 'demoForm' ? 'generate_lead' : 'contact_submit',
@@ -96,16 +102,11 @@
           });
         }
 
-        // Show Success Feedback
+        // Show Confirmation State
         showFormSuccess(form, formId);
       } catch (err) {
         console.error('Lead submission error:', err);
-        alert('Thank you! Your submission has been received. Our team will contact you shortly.');
-        form.reset();
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-        }
+        showFormSuccess(form, formId);
       }
     });
   }
