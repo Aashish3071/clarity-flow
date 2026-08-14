@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzhHhRGnZlcGKxYmKInb5V-bGIVhL9mu9Ny_2tFM8PIiO-X9k-upVkgVa8814uaC-zd/exec';
+  const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwdwDPbovgamKSt8zJocTi5N1UPaR8rAXChkz6eeTfYbJsyy_BJTQSKWoFd4Z2HVFQzSQ/exec';
 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
@@ -76,21 +76,19 @@
       });
 
       try {
-        // Send payload using standard URL-encoded form data (robust for all Google Apps Script parsers)
-        const urlParams = new URLSearchParams();
+        // Send payload via query parameters to ensure 100% reliable ingestion across all browsers
+        const params = new URLSearchParams();
         Object.keys(payload).forEach(key => {
-          urlParams.append(key, payload[key]);
+          if (payload[key] !== undefined && payload[key] !== null) {
+            params.append(key, payload[key]);
+          }
         });
-        // Also attach raw JSON string in payload parameter
-        urlParams.append('payload_json', JSON.stringify(payload));
 
-        await fetch(GOOGLE_SHEETS_ENDPOINT, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-          },
-          body: urlParams.toString()
+        const targetUrl = `${GOOGLE_SHEETS_ENDPOINT}?${params.toString()}`;
+
+        await fetch(targetUrl, {
+          method: 'GET',
+          mode: 'no-cors'
         });
 
         // Trigger Google Tag Manager Data Layer Event
