@@ -156,7 +156,7 @@
      SMOOTH SCROLL | HASH & ANCHOR LINKS
      ============================================================ */
   function scrollToHash(hash) {
-    if (!hash) return;
+    if (!hash || hash === '#') return;
     const target = document.querySelector(hash);
     if (target) {
       const navHeight = nav ? nav.offsetHeight : 64;
@@ -176,13 +176,6 @@
       }
     });
   });
-
-  // Handle incoming hash on page load (e.g. index.html#products)
-  if (window.location.hash) {
-    window.addEventListener('load', function () {
-      setTimeout(() => scrollToHash(window.location.hash), 150);
-    });
-  }
 
   /* ============================================================
      FAQ ACCORDION

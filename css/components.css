@@ -706,18 +706,64 @@
 /* - RESPONSIVE OVERRIDES - */
 @media (max-width: 1024px) {
   .hero__grid {
-    text-align: center;
+    grid-template-columns: 1fr;
     gap: var(--sp-8);
   }
 
-  .hero__lead { margin-inline: auto; }
-  .hero__actions { justify-content: center; }
-  .hero__stats { justify-content: center; }
+  .hero__content {
+    text-align: left;
+  }
+
+  .hero__lead {
+    max-width: 100%;
+  }
+
+  .hero__visual {
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+  }
 
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--nav-height) + 24px);
+    padding-bottom: 36px;
+  }
+
+  .hero__title {
+    font-size: clamp(1.85rem, 7.5vw, 2.4rem);
+    line-height: 1.15;
+  }
+
+  .hero__lead {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: var(--sp-6);
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero__visual {
+    margin-top: var(--sp-4);
+    width: 100%;
+    max-width: 100%;
+  }
+
   .nav__menu {
     position: fixed;
     top: var(--nav-height);
@@ -725,14 +771,50 @@
     background: white;
     border-bottom: 1px solid #e5e7eb;
     flex-direction: column;
-    padding: var(--sp-6);
-    gap: var(--sp-4);
+    padding: var(--sp-6) var(--sp-4);
+    gap: var(--sp-2);
     display: none;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    max-height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
   }
 
   .nav__menu.open { display: flex; }
+
+  .nav__item { width: 100%; }
+
+  .nav__link {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    padding: 6px;
+    display: none;
+    pointer-events: auto;
+    min-width: 100%;
+  }
+
+  .nav__dropdown::before { display: none; }
+
+  .has-dropdown.open .nav__dropdown {
+    display: block;
+  }
 
   .nav__hamburger { display: flex; }
   .nav__cta { display: none; }
