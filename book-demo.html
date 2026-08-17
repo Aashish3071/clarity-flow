@@ -95,9 +95,10 @@
     .lp-hero {
       padding-top: calc(var(--nav-height) + var(--sp-12));
       padding-bottom: var(--sp-16);
-      background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
-      color: var(--clr-white);
+      background: #f9fafb;
+      color: #111827;
       position: relative;
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .lp-hero-grid {
@@ -117,27 +118,27 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #38BDF8;
+      color: #2563EB;
       margin-bottom: var(--sp-4);
     }
 
     .lp-hero-title {
-      font-size: clamp(2.25rem, 4vw, 3.25rem);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -0.03em;
-      color: var(--clr-white);
+      color: #111827;
       margin-bottom: var(--sp-5);
     }
 
     .lp-hero-title span.highlight {
-      color: #60A5FA;
+      color: #2563EB;
     }
 
     .lp-hero-lead {
       font-size: clamp(1rem, 1.5vw, 1.125rem);
       line-height: 1.6;
-      color: #94A3B8;
+      color: #4b5563;
       margin-bottom: var(--sp-8);
     }
 
@@ -153,7 +154,7 @@
       align-items: flex-start;
       gap: 12px;
       font-size: 15px;
-      color: #E2E8F0;
+      color: #374151;
       line-height: 1.5;
     }
 
@@ -161,9 +162,9 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: rgba(56, 189, 248, 0.15);
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      color: #38BDF8;
+      background: #EFF6FF;
+      border: 1px solid #DBEAFE;
+      color: #2563EB;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -290,8 +291,7 @@
     }
 
     .lp-module-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+      border-color: #d1d5db;
     }
 
     .lp-module-icon {
@@ -393,15 +393,15 @@
       border: none;
     }
 
-    .lp-faq-btn svg {
-      width: 18px;
-      height: 18px;
+    .lp-faq-icon {
+      font-size: 18px;
       color: var(--clr-gray-500);
+      line-height: 1;
       transition: transform var(--t-base);
     }
 
-    .lp-faq-item.open .lp-faq-btn svg {
-      transform: rotate(180deg);
+    .lp-faq-item.open .lp-faq-icon {
+      transform: rotate(45deg);
     }
 
     .lp-faq-answer {
@@ -452,7 +452,7 @@
   <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
   <!-- NAVIGATION -->
-  <nav class="nav nav--hero-dark" id="mainNav" role="navigation" aria-label="Main navigation">
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
       <a href="index.html" class="nav__logo" aria-label="Credstacks Home">
         <img src="assets/logo.svg" alt="Credstacks Logo" width="32" height="32" aria-hidden="true">
@@ -582,7 +582,6 @@
             </form>
 
             <div class="lp-form-guarantee">
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
               <span>14 days free • No credit card required • Managed cloud starts at $20/mo + tax</span>
             </div>
           </div>
@@ -596,9 +595,6 @@
       <div class="container">
         <div class="lp-trust-grid">
           <div class="lp-trust-card">
-            <div class="lp-trust-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            </div>
             <div>
               <div class="lp-trust-title">AES-256 Encryption</div>
               <p class="lp-trust-desc">Data encrypted in transit & at rest</p>
@@ -606,9 +602,6 @@
           </div>
 
           <div class="lp-trust-card">
-            <div class="lp-trust-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
             <div>
               <div class="lp-trust-title">Fast Provisioning</div>
               <p class="lp-trust-desc">Instance setup in under 24 hours</p>
@@ -616,9 +609,6 @@
           </div>
 
           <div class="lp-trust-card">
-            <div class="lp-trust-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-            </div>
             <div>
               <div class="lp-trust-title">Full Portability</div>
               <p class="lp-trust-desc">Complete ownership of your business data</p>
@@ -626,9 +616,6 @@
           </div>
 
           <div class="lp-trust-card">
-            <div class="lp-trust-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-            </div>
             <div>
               <div class="lp-trust-title">Onboarding Support</div>
               <p class="lp-trust-desc">Guided assistance during your trial</p>
@@ -649,33 +636,21 @@
 
         <div class="lp-modules-grid">
           <div class="lp-module-card">
-            <div class="lp-module-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            </div>
             <h3>Smart CRM</h3>
             <p>Visual drag-and-drop Kanban pipelines, lead assignment rules, in-app email sync, and AI support bot assistance.</p>
           </div>
 
           <div class="lp-module-card">
-            <div class="lp-module-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-            </div>
             <h3>Cloud ERP</h3>
             <p>Inventory tracking, double-entry accounting, multi-currency invoicing, purchase orders, and live financial reporting.</p>
           </div>
 
           <div class="lp-module-card">
-            <div class="lp-module-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-            </div>
             <h3>HRMS & Payroll</h3>
             <p>Employee records, automated attendance tracking, leave request approvals, tax computations, and automated payslips.</p>
           </div>
 
           <div class="lp-module-card">
-            <div class="lp-module-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-            </div>
             <h3>E-commerce</h3>
             <p>Custom store builder, product catalogs, shopping cart checkout, and real-time inventory synchronization with your ERP.</p>
           </div>
@@ -725,7 +700,7 @@
         <div class="lp-faq-item">
           <button class="lp-faq-btn" type="button" aria-expanded="false">
             Is the 14-day access period completely free?
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="lp-faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="lp-faq-answer">
             <div class="lp-faq-answer-inner">Yes. You receive 14 days of full, unrestricted platform access with zero financial commitment. We do not collect credit card details for trial access.</div>
@@ -735,7 +710,7 @@
         <div class="lp-faq-item">
           <button class="lp-faq-btn" type="button" aria-expanded="false">
             What happens when the 14-day trial period ends?
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="lp-faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="lp-faq-answer">
             <div class="lp-faq-answer-inner">At the conclusion of your trial, your workspace remains saved for 30 days. You can choose to upgrade to a paid subscription or export your business data. No unexpected charges will occur.</div>
@@ -745,7 +720,7 @@
         <div class="lp-faq-item">
           <button class="lp-faq-btn" type="button" aria-expanded="false">
             Can our team import existing business data during trial?
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="lp-faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="lp-faq-answer">
             <div class="lp-faq-answer-inner">Yes. You can import contacts, leads, inventory items, and financial records via CSV or Excel files. Our onboarding team is available to assist with data formatting.</div>
@@ -755,7 +730,7 @@
         <div class="lp-faq-item">
           <button class="lp-faq-btn" type="button" aria-expanded="false">
             How can we contact technical support during trial evaluation?
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <span class="lp-faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="lp-faq-answer">
             <div class="lp-faq-answer-inner">Every trial account includes support via email (<a href="mailto:info@credstacks.com" style="color: var(--clr-primary);">info@credstacks.com</a>) and direct consultation with our solutions team.</div>

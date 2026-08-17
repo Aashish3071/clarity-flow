@@ -1,145 +1,37 @@
-/* ============================================================
-   CREDSTACKS | ANIMATIONS v1.0
-   ============================================================ */
+/* CREDSTACKS | ANIMATIONS */
 
-/* ============================================================
-   KEYFRAMES
-   ============================================================ */
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(-1deg); }
-  33%       { transform: translateY(-10px) rotate(0deg); }
-  66%       { transform: translateY(-5px) rotate(1deg); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.6; transform: scale(0.95); }
-}
-
-@keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-24px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(24px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.92); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(100%); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
-}
-
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-
-@keyframes progressBar {
-  from { width: 0%; }
-  to   { width: var(--progress, 100%); }
-}
-
-@keyframes wave {
-  0%, 100% { transform: scaleY(0.5); }
-  50%       { transform: scaleY(1); }
-}
-
-/* ============================================================
-   SCROLL-REVEAL SYSTEM
-   ============================================================ */
-
+/* Scroll-reveal: disabled. Elements are always visible. */
 .reveal {
-  opacity: 0;
-  transition: opacity 0.6s var(--t-fast), transform 0.6s var(--t-fast);
+  opacity: 1;
+  transform: none;
 }
-
-.reveal--up       { transform: translateY(32px); }
-.reveal--down     { transform: translateY(-32px); }
-.reveal--left     { transform: translateX(-32px); }
-.reveal--right    { transform: translateX(32px); }
-.reveal--scale    { transform: scale(0.92); }
-.reveal--fade     { /* opacity only */ }
-
-/* Visible state */
 .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
 
-/* Staggered delays for grid children */
-.stagger > *:nth-child(1) { transition-delay: 0ms;   }
-.stagger > *:nth-child(2) { transition-delay: 80ms;  }
-.stagger > *:nth-child(3) { transition-delay: 160ms; }
-.stagger > *:nth-child(4) { transition-delay: 240ms; }
-.stagger > *:nth-child(5) { transition-delay: 320ms; }
-.stagger > *:nth-child(6) { transition-delay: 400ms; }
-.stagger > *:nth-child(7) { transition-delay: 480ms; }
-.stagger > *:nth-child(8) { transition-delay: 560ms; }
-.stagger > *:nth-child(9) { transition-delay: 640ms; }
+/* No stagger delays */
+.stagger > * {
+  transition-delay: 0ms !important;
+}
 
-/* ============================================================
-   HERO ANIMATIONS
-   ============================================================ */
-.hero__badge { animation: fadeInDown 0.6s var(--t-fast) 0.1s both; }
-.hero__title { animation: fadeInUp 0.7s var(--t-fast) 0.2s both; }
-.hero__lead { animation: fadeInUp 0.7s var(--t-fast) 0.35s both; }
-.hero__actions { animation: fadeInUp 0.7s var(--t-fast) 0.5s both; }
-.hero__stats { animation: fadeInUp 0.7s var(--t-fast) 0.65s both; }
-.hero__visual { animation: fadeInLeft 0.8s var(--t-fast) 0.3s both; }
+/* Hero elements: no entrance animations */
+.hero__badge,
+.hero__title,
+.hero__lead,
+.hero__actions,
+.hero__stats,
+.hero__visual,
+.page-hero .section-label,
+.page-hero h1,
+.page-hero .lead,
+.page-hero__actions {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
 
-.page-hero .section-label { animation: fadeInDown 0.5s var(--t-fast) 0.1s both; }
-.page-hero h1 { animation: fadeInUp 0.6s var(--t-fast) 0.2s both; }
-.page-hero .lead { animation: fadeInUp 0.6s var(--t-fast) 0.35s both; }
-.page-hero__actions { animation: fadeInUp 0.6s var(--t-fast) 0.5s both; }
-
-/* ============================================================
-   MICRO-INTERACTIONS
-   ============================================================ */
-
+/* Button click feedback only */
 .btn::after {
   content: '';
   position: absolute;
@@ -148,47 +40,10 @@
   background: white;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s;
+  transition: opacity 0.15s;
 }
-.btn:active::after { opacity: 0.1; }
+.btn:active::after { opacity: 0.08; }
 
-.card-shine {
-  position: relative;
-  overflow: hidden;
-}
-.card-shine::after {
-  content: '';
-  position: absolute;
-  top: -50%; left: -60%;
-  width: 30%; height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-  transform: skewX(-20deg);
-  pointer-events: none;
-  transition: left 0.6s;
-}
-.card-shine:hover::after { left: 130%; }
-
-/* ============================================================
-   PROGRESS BARS
-   ============================================================ */
-.progress-bar {
-  height: 6px;
-  background: var(--clr-gray-200);
-  border-radius: var(--r-full);
-  overflow: hidden;
-}
-.progress-bar__fill {
-  height: 100%;
-  border-radius: var(--r-full);
-  background: var(--clr-primary);
-  width: 0%;
-  transition: width 1.2s var(--t-fast);
-}
-.is-visible .progress-bar__fill { width: var(--progress, 75%); }
-
-/* ============================================================
-   REDUCED MOTION
-   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -196,5 +51,4 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal { opacity: 1; transform: none; }
 }
