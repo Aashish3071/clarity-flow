@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" fill="none">
+  <!-- Rounded Base Plate -->
+  <rect width="36" height="36" rx="8" fill="#EFF6FF" stroke="#DBEAFE" stroke-width="1.2"/>
+  <!-- Sales Pipeline & Contact Vector Graphic -->
+  <circle cx="14" cy="13" r="4" fill="#2563EB"/>
+  <path d="M 7 24 Q 7 19 14 19 Q 21 19 21 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+  <!-- Pipeline Funnel / Growth Arrow -->
+  <path d="M 22 12 L 29 12 M 29 12 L 26 9 M 29 12 L 26 15" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 20 23 L 24 19 L 29 21" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="29" cy="21" r="1.5" fill="#10B981"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" fill="none">
+  <!-- Rounded Base Plate -->
+  <rect width="36" height="36" rx="8" fill="#F0FDF4" stroke="#DCFCE7" stroke-width="1.2"/>
+  <!-- Isometric Operations & Inventory Box -->
+  <path d="M 18 8 L 28 13 L 18 18 L 8 13 Z" fill="#BBF7D0" stroke="#059669" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M 8 13 L 8 23 L 18 28 L 18 18 Z" fill="#10B981" stroke="#059669" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M 28 13 L 28 23 L 18 28 L 18 18 Z" fill="#059669" stroke="#047857" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Internal Ledger Balance Line -->
+  <path d="M 18 11 L 24 14" stroke="#047857" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" fill="none">
+  <!-- Rounded Base Plate -->
+  <rect width="36" height="36" rx="8" fill="#F0F9FF" stroke="#E0F2FE" stroke-width="1.2"/>
+  <!-- Digital Storefront & Shopping Bag Vector Graphic -->
+  <!-- Bag Body -->
+  <rect x="10" y="14" width="16" height="13" rx="2.5" fill="#0284C7" stroke="#0369A1" stroke-width="1.2"/>
+  <!-- Bag Handle -->
+  <path d="M 14 14 L 14 11 Q 14 8 18 8 Q 22 8 22 11 L 22 14" fill="none" stroke="#0284C7" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Dispatch / Live Signal Arrow -->
+  <path d="M 18 17 L 18 23 M 15 20 L 18 23 L 21 20" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Notification tag -->
+  <circle cx="25" cy="12" r="3" fill="#10B981"/>
+</svg>

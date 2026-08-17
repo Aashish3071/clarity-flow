@@ -80,8 +80,13 @@
 
   dropdownItems.forEach(item => {
     const toggle = item.querySelector('.nav__dropdown-toggle');
+    let leaveTimer = null;
 
     item.addEventListener('mouseenter', function () {
+      if (leaveTimer) {
+        clearTimeout(leaveTimer);
+        leaveTimer = null;
+      }
       if (window.innerWidth > 1024) {
         closeAllDropdowns();
         item.classList.add('open');
@@ -91,20 +96,21 @@
 
     item.addEventListener('mouseleave', function () {
       if (window.innerWidth > 1024) {
-        item.classList.remove('open');
-        toggle?.setAttribute('aria-expanded', 'false');
+        leaveTimer = setTimeout(() => {
+          item.classList.remove('open');
+          toggle?.setAttribute('aria-expanded', 'false');
+        }, 180);
       }
     });
 
     toggle?.addEventListener('click', function (e) {
-      if (window.innerWidth <= 1024) {
-        e.preventDefault();
-        const isOpen = item.classList.contains('open');
-        closeAllDropdowns();
-        if (!isOpen) {
-          item.classList.add('open');
-          toggle.setAttribute('aria-expanded', 'true');
-        }
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = item.classList.contains('open');
+      closeAllDropdowns();
+      if (!isOpen) {
+        item.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
       }
     });
   });

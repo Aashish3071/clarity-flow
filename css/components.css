@@ -70,29 +70,44 @@
   position: relative;
 }
 
+.has-dropdown:hover .nav__chevron,
+.has-dropdown.open .nav__chevron {
+  transform: rotate(180deg);
+}
+
 .nav__dropdown {
   position: absolute;
   top: 100%; left: -12px;
-  min-width: 260px;
+  min-width: 270px;
   background: var(--clr-white);
   border: 1px solid var(--clr-border);
   border-radius: var(--r-xl);
   padding: var(--sp-2);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(8px);
-  transition: all var(--t-fast);
+  transform: translateY(0);
+  transition: opacity var(--t-fast), visibility var(--t-fast);
   pointer-events: none;
   z-index: 110;
 }
 
+/* Invisible bridge to prevent mouse leave gap between nav link and dropdown */
+.nav__dropdown::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
+
 .has-dropdown:hover .nav__dropdown,
 .has-dropdown:focus-within .nav__dropdown,
+.has-dropdown.open .nav__dropdown,
 .nav__item.open .nav__dropdown {
   opacity: 1;
   visibility: visible;
-  transform: translateY(4px);
   pointer-events: auto;
 }
 
@@ -101,7 +116,7 @@
   display: flex;
   align-items: center;
   gap: var(--sp-3);
-  padding: var(--sp-3);
+  padding: 10px var(--sp-3);
   border-radius: var(--r-lg);
   transition: background var(--t-fast);
 }
@@ -111,16 +126,16 @@
 }
 
 .nav__dropdown-icon {
-  width: 32px; height: 32px;
-  border-radius: var(--r-md);
-  background: var(--clr-primary-light);
-  color: var(--clr-primary);
+  width: 36px; height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
   flex-shrink: 0;
+}
+
+.nav__dropdown-icon img {
+  width: 36px; height: 36px;
+  display: block;
 }
 
 .nav__dropdown-text strong {
@@ -367,6 +382,20 @@
   height: 100%;
 }
 
+.product-card__header-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.product-card__icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: block;
+}
+
 .product-card__title {
   font-size: var(--fs-xl);
   font-weight: var(--fw-bold);
@@ -377,12 +406,12 @@
 .product-card__subtitle {
   font-size: var(--fs-xs);
   color: var(--clr-text-muted);
-  margin-bottom: var(--sp-4);
 }
 
 .product-card__desc {
   font-size: var(--fs-sm);
   color: var(--clr-text-muted);
+  margin-top: var(--sp-3);
   margin-bottom: var(--sp-6);
   flex: 1;
 }
