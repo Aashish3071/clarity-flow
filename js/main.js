@@ -68,7 +68,7 @@
   /* ============================================================
      DROPDOWN MENUS
      ============================================================ */
-  const dropdownItems = document.querySelectorAll('.nav__item.has-dropdown');
+  const dropdownItems = document.querySelectorAll('.has-dropdown');
 
   function closeAllDropdowns() {
     dropdownItems.forEach(item => {
@@ -116,7 +116,7 @@
   });
 
   document.addEventListener('click', function (e) {
-    if (!e.target.closest('.nav__item.has-dropdown')) {
+    if (!e.target.closest('.has-dropdown')) {
       closeAllDropdowns();
     }
   });
