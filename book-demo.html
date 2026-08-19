@@ -541,6 +541,14 @@
             </div>
 
             <form class="form" id="demoForm" novalidate>
+              <!-- Anti-Spam Decoy Fields (Hidden from humans, traps bots) -->
+              <div class="form-hp" aria-hidden="true">
+                <label for="dWebsite">Company Website (leave blank)</label>
+                <input type="text" id="dWebsite" name="website_url" tabindex="-1" autocomplete="off">
+                <label for="dOfficeFax">Direct Fax (leave blank)</label>
+                <input type="text" id="dOfficeFax" name="business_fax" tabindex="-1" autocomplete="off">
+              </div>
+
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="dName">Full Name <span class="form-required">*</span></label>

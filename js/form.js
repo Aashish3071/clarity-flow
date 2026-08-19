@@ -1,11 +1,19 @@
 /* ============================================================
-   CREDSTACKS | FORM VALIDATION & GOOGLE SHEETS SUBMISSION
+   CREDSTACKS | FORM VALIDATION, ANTI-SPAM DEFENSE & SUBMISSION
    ============================================================ */
 
 (function () {
   'use strict';
 
   const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwdwDPbovgamKSt8zJocTi5N1UPaR8rAXChkz6eeTfYbJsyy_BJTQSKWoFd4Z2HVFQzSQ/exec';
+
+  // Known disposable / temporary email domains
+  const DISPOSABLE_DOMAINS = new Set([
+    'mailinator.com', '10minutemail.com', 'guerrillamail.com', 'tempmail.com',
+    'throwawaymail.com', 'yopmail.com', 'sharklasers.com', 'dispostable.com',
+    'getairmail.com', 'trashmail.com', 'fakemailgenerator.com', 'temp-mail.org',
+    'burnermail.io', 'mytemp.email', 'tempail.com', 'mohmal.com'
+  ]);
 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
@@ -15,12 +23,67 @@
     return /^[\+]?[\d\s\-\(\)]{7,20}$/.test(phone.trim());
   }
 
+  function isBotEmailPattern(email) {
+    if (!email || !email.includes('@')) return true;
+    const parts = email.toLowerCase().trim().split('@');
+    if (parts.length !== 2) return true;
+    const [user, domain] = parts;
+
+    // Check disposable domain
+    if (DISPOSABLE_DOMAINS.has(domain)) return true;
+
+    // Check dot-alias abuse (e.g. a.le.g.ekih.361@gmail.com)
+    const dotCount = (user.match(/\./g) || []).length;
+    if (dotCount >= 3 && user.length <= 18) return true;
+    if (/(?:^|\.)[a-z]\.[a-z]\.[a-z](?:\.|$)/.test(user)) return true;
+
+    return false;
+  }
+
+  function isGibberish(text) {
+    if (!text || typeof text !== 'string') return false;
+    const clean = text.trim();
+    if (clean.length < 5) return false;
+
+    // 6+ consecutive consonants without vowel/space (e.g. Usfnrdyvb)
+    const consonantClusterRegex = /[bcdfghjklmnpqrstvwxyz]{6,}/i;
+    if (consonantClusterRegex.test(clean)) return true;
+
+    // Random mixed case high-entropy token without spaces (e.g. ZXsaVkVFLAMhBDzURBCgL)
+    if (clean.length > 15 && !clean.includes(' ') && /[A-Z]/.test(clean) && /[a-z]/.test(clean) && !clean.includes('@') && !clean.includes('.')) {
+      return true;
+    }
+
+    return false;
+  }
+
+  function isDummyPhone(phone) {
+    if (!phone) return false;
+    const digits = phone.replace(/\D/g, '');
+    if (digits.length < 7) return true;
+    // All same digits (e.g. 1111111111)
+    if (/^(\d)\1+$/.test(digits)) return true;
+    // Sequential digits
+    if (digits === '1234567890' || digits === '0123456789') return true;
+    return false;
+  }
+
   function setupForm(formId) {
     const form = document.getElementById(formId);
     if (!form) return;
 
     if (form.dataset.initialized === 'true') return;
     form.dataset.initialized = 'true';
+
+    // Layer 2: Time-Trap timestamp
+    const formRenderTime = Date.now();
+
+    // Layer 3: Human interaction telemetry
+    let hasHumanInteraction = false;
+    const markInteraction = () => { hasHumanInteraction = true; };
+    ['pointerdown', 'keydown', 'touchstart', 'focusin'].forEach(evt => {
+      form.addEventListener(evt, markInteraction, { passive: true, once: false });
+    });
 
     form.querySelectorAll('input, select, textarea').forEach(field => {
       field.addEventListener('input', () => clearError(field));
@@ -51,7 +114,7 @@
       if (!isValid) return;
 
       const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn ? submitBtn.innerHTML : '';
+      const isDemo = formId === 'demoForm';
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = `
@@ -66,7 +129,7 @@
       // Collect form payload
       const formData = new FormData(form);
       const payload = {
-        formType: formId === 'demoForm' ? '14-Day Free Access Request' : 'Contact Message',
+        formType: isDemo ? '14-Day Free Access Request' : 'Contact Message',
         submittedAt: new Date().toISOString(),
         pageUrl: window.location.href
       };
@@ -75,8 +138,49 @@
         payload[key] = typeof value === 'string' ? value.trim() : value;
       });
 
+      // ============================================================
+      // MULTI-LAYER ANTI-SPAM EVALUATION
+      // ============================================================
+      const hpWebsite = (formData.get('website_url') || '').trim();
+      const hpFax = (formData.get('business_fax') || '').trim();
+      const elapsedSeconds = (Date.now() - formRenderTime) / 1000;
+      const emailVal = payload.email || '';
+      const nameVal = payload.fullName || '';
+      const msgVal = payload.message || '';
+      const bizVal = payload.businessName || '';
+      const phoneVal = payload.phone || '';
+
+      const isHoneypotTriggered = hpWebsite.length > 0 || hpFax.length > 0;
+      const isSpeedTriggered = elapsedSeconds < 3.0;
+      const isInteractionMissing = !hasHumanInteraction;
+      const isEmailBot = isBotEmailPattern(emailVal);
+      const isGibberishLead = isGibberish(nameVal) || isGibberish(msgVal) || isGibberish(bizVal);
+      const isFakePhone = phoneVal ? isDummyPhone(phoneVal) : false;
+
+      const isSpamBot = (
+        isHoneypotTriggered ||
+        isSpeedTriggered ||
+        isInteractionMissing ||
+        isEmailBot ||
+        isGibberishLead ||
+        isFakePhone
+      );
+
+      // Layer 5: Silent Tarpit (Fake Success for bots)
+      if (isSpamBot) {
+        console.warn('[Security] Submission filtered by anti-spam heuristics.');
+        setTimeout(() => {
+          showFormSuccess(form, formId);
+        }, 600);
+        return;
+      }
+
+      // Clean out honeypot decoy fields before sending to Google Sheets
+      delete payload.website_url;
+      delete payload.business_fax;
+
       try {
-        // Send payload via query parameters to ensure 100% reliable ingestion across all browsers
+        // Send legitimate payload via query parameters
         const params = new URLSearchParams();
         Object.keys(payload).forEach(key => {
           if (payload[key] !== undefined && payload[key] !== null) {
@@ -94,13 +198,12 @@
         // Trigger Google Tag Manager Data Layer Event
         if (window.dataLayer) {
           window.dataLayer.push({
-            event: formId === 'demoForm' ? 'generate_lead' : 'contact_submit',
+            event: isDemo ? 'generate_lead' : 'contact_submit',
             formId: formId,
             leadProduct: payload.product || payload.subject || 'general'
           });
         }
 
-        // Show Confirmation State
         showFormSuccess(form, formId);
       } catch (err) {
         console.error('Lead submission error:', err);
