@@ -956,3 +956,284 @@
   pointer-events: none !important;
   z-index: -1 !important;
 }
+
+/* ============================================================
+   CUSTOMIZED CRM SPECIFIC COMPONENTS
+   ============================================================ */
+
+/* Industry Solutions Cards */
+.industry-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-6);
+  transition: transform var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast);
+  height: 100%;
+}
+
+.industry-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.08);
+  transform: translateY(-2px);
+}
+
+.industry-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.industry-card__icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.industry-card__title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-gray-900);
+  line-height: 1.25;
+}
+
+.industry-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+  background: var(--clr-primary-light);
+  color: var(--clr-primary);
+  margin-top: 2px;
+}
+
+.industry-problem {
+  background: #FFF1F2;
+  border-left: 3px solid #F43F5E;
+  padding: 10px 14px;
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  margin: var(--sp-3) 0 var(--sp-4);
+}
+
+.industry-problem__label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #BE123C;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.industry-problem__text {
+  font-size: var(--fs-xs);
+  color: #881337;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.industry-pipeline {
+  margin: var(--sp-3) 0;
+  background: var(--clr-surface-alt);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-lg);
+  padding: 12px;
+}
+
+.industry-pipeline__label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--clr-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.industry-pipeline__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.pipeline-chip {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-sm);
+  color: var(--clr-gray-800);
+  white-space: nowrap;
+}
+
+.pipeline-arrow {
+  color: var(--clr-gray-400);
+  font-size: 11px;
+  user-select: none;
+}
+
+.industry-card__benefits {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.industry-card__benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: var(--fs-sm);
+  color: var(--clr-gray-700);
+  line-height: 1.45;
+}
+
+.industry-card__benefit-icon {
+  color: #10B981;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Comparison Section (Generic CRM vs Credstacks Custom CRM) */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.comparison-card {
+  border-radius: var(--r-xl);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.comparison-card--rigid {
+  background: #FFF1F2;
+  border: 1px solid #FECDD3;
+}
+
+.comparison-card--custom {
+  background: #F0FDF4;
+  border: 2px solid #86EFAC;
+}
+
+.comparison-card__badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+  width: fit-content;
+}
+
+.comparison-card--rigid .comparison-card__badge {
+  background: #FFE4E6;
+  color: #E11D48;
+}
+
+.comparison-card--custom .comparison-card__badge {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.comparison-card__title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-gray-900);
+}
+
+.comparison-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comparison-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--fs-sm);
+  color: var(--clr-gray-800);
+  line-height: 1.5;
+}
+
+.comparison-card__list li strong {
+  color: var(--clr-gray-900);
+}
+
+/* How It Works Stepper */
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-8);
+  margin-top: var(--sp-8);
+}
+
+.workflow-card {
+  position: relative;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.workflow-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--clr-primary-light);
+  border: 1px solid var(--clr-primary-border);
+  color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-2);
+}
+
+.workflow-card__title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--clr-gray-900);
+}
+
+.workflow-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  .workflow-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+}
+

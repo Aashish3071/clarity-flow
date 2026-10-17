@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" fill="none">
+  <!-- Rounded Base Plate -->
+  <rect width="36" height="36" rx="8" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.2"/>
+  <!-- Custom Slider Controls / Bespoke Workflow -->
+  <line x1="9" y1="12" x2="27" y2="12" stroke="#7C3AED" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="15" cy="12" r="3" fill="#7C3AED"/>
+  
+  <line x1="9" y1="18" x2="27" y2="18" stroke="#7C3AED" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="22" cy="18" r="3" fill="#7C3AED"/>
+
+  <line x1="9" y1="24" x2="27" y2="24" stroke="#7C3AED" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="13" cy="24" r="3" fill="#7C3AED"/>
+</svg>

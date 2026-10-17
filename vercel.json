@@ -3,5 +3,16 @@
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/erp", "destination": "/", "permanent": true },
+    { "source": "/erp.html", "destination": "/", "permanent": true },
+    { "source": "/erp/:path*", "destination": "/", "permanent": true },
+    { "source": "/hrms", "destination": "/", "permanent": true },
+    { "source": "/hrms.html", "destination": "/", "permanent": true },
+    { "source": "/hrms/:path*", "destination": "/", "permanent": true },
+    { "source": "/ecommerce", "destination": "/", "permanent": true },
+    { "source": "/ecommerce.html", "destination": "/", "permanent": true },
+    { "source": "/ecommerce/:path*", "destination": "/", "permanent": true }
+  ]
 }

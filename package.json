@@ -1,7 +1,7 @@
 {
   "name": "credstacks",
   "version": "1.0.0",
-  "description": "Credstacks Intelligent Business Software Suite",
+  "description": "Credstacks Customized CRM Solutions for Businesses",
   "private": true,
   "scripts": {
     "build": "echo 'Static build complete'",

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" fill="none">
+  <!-- Rounded Base Plate -->
+  <rect width="36" height="36" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.2"/>
+  <!-- Sun rays -->
+  <circle cx="18" cy="11" r="3.5" fill="#F59E0B"/>
+  <line x1="18" y1="4" x2="18" y2="6" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="11" y1="11" x2="13" y2="11" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="23" y1="11" x2="25" y2="11" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="13" y1="6" x2="14.5" y2="7.5" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="23" y1="6" x2="21.5" y2="7.5" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Solar Panel Grid -->
+  <path d="M9 28 L13 18 L23 18 L27 28 Z" fill="#2563EB" fill-opacity="0.15" stroke="#2563EB" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="18" y1="18" x2="18" y2="28" stroke="#2563EB" stroke-width="1.2"/>
+  <line x1="11" y1="23" x2="25" y2="23" stroke="#2563EB" stroke-width="1.2"/>
+</svg>
